@@ -1,0 +1,42 @@
+{{#partial "title" }}
+  Welcome to the Trip Planner!
+{{/partial}}
+
+<!--form.hbs.-->
+{{#partial "content"}}
+
+<h1>Plan Your Trip</h1>
+<form action="/">
+ <div class="form-group">
+   <label for="suitcase">Your name</label>
+   <input id="sender" name="sender" class="form-control" type="text">
+ </div>
+ <div class="form-group">
+   <label for="toiletries">What toiletry items are you bringing?</label>
+   <input id="toiletries" name="toiletries" class="form-control" type="text">
+ </div>
+  <div class="form-group">
+    <label for="map">What is the name of the map you are bringing?</label>
+    <input id="map" name="map" class="form-control" type="text">
+  </div>
+ <button type="submit" class="btn">Plan It!</button>
+</form>
+
+<!--form.hbs.-->
+{{/partial}}
+
+{{#partial "post"}}
+
+   <h1>Post list!</h1>
+
+   {{#if instances}}
+       {{#each instances }}
+        <p>Current Trip:</p>
+        <p>{{ suitcase }}</p>
+       {{/each}}
+   {{else}}
+    <p>No Trips!</p>
+   {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}
